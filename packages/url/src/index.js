@@ -19,9 +19,10 @@ export default function url(options = {}) {
     exclude,
     publicPath = '',
     emitFiles = true,
-    fileName = '[hash][extname]'
+    fileName = '[hash][extname]',
+    resolve
   } = options;
-  const filter = createFilter(include, exclude);
+  const filter = createFilter(include, exclude, {resolve});
 
   const copies = Object.create(null);
 
